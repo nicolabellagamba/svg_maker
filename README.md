@@ -48,7 +48,7 @@ to `/example` folder.
 ```
 
 <p>
-    <img src="https://github.com/flutter/packages/blob/main/packages/svg_maker/doc/svg_with_text.svg"
+    <img src="https://github.com/nicolabellagamba/svg_maker/tree/main/doc/svg_with_text.svg"
     alt="Simple svg with text" height="400"/>
 </p>
 
