@@ -1,6 +1,6 @@
 name: svg_maker
 description: "Package that helps with svg creation. After creating an svg object user can add elements and modify their attributes."
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/nicolabellagamba/svg_maker
 
 environment:
