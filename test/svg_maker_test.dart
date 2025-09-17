@@ -1,11 +1,8 @@
 // flutter imports
 import 'package:flutter/material.dart';
-
 // external imports
 import 'package:flutter_test/flutter_test.dart';
-import 'package:svg_maker/src/enums/text_anchor_value.dart';
 import 'package:svg_maker/src/models/svg_element.dart';
-import 'package:svg_maker/src/models/svg_point.dart';
 
 void main() {
   test('create a svg with a simple pattern', () {

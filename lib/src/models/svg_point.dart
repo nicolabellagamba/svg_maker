@@ -1,3 +1,4 @@
+part of './svg_element.dart';
 class SvgPoint {
   final num x;
   final num y;

@@ -1,21 +1,19 @@
 // dart imports
 import 'dart:ui';
 
-// internal imports
-import 'package:svg_maker/src/enums/font_style_value.dart';
-import 'package:svg_maker/src/enums/svg_attribute.dart';
-import 'package:svg_maker/src/enums/text_anchor_value.dart';
-import 'package:svg_maker/src/extensions/color_extension.dart';
-import 'package:svg_maker/src/models/svg_point.dart';
-import 'package:svg_maker/src/utils/svg_default_values.dart';
-
-// mixins - elements
-part '../mixins/animation_element_container_mixin.dart';
+// enums
+part '../enums/font_style_value.dart';
+part '../enums/svg_attribute.dart';
+part '../enums/text_anchor_value.dart';
+// extensions
+part '../extensions/color_extension.dart';
 // mixins
 // mixins - attributes
 part '../mixins/attributes/coordinate_attributes_mixin.dart';
 part '../mixins/attributes/fill_attribute_mixins.dart';
 part '../mixins/attributes/stroke_attribute_mixins.dart';
+// mixins - elements
+part '../mixins/animation_element_container_mixin.dart';
 part '../mixins/descriptive_element_container_mixin.dart';
 part '../mixins/points_attribute_mixin.dart';
 part '../mixins/shape_element_container_mixin.dart';
@@ -24,7 +22,10 @@ part '../mixins/text_content_element_mixin.dart';
 part './animation_elements.dart';
 part './descriptive_elements.dart';
 part './shape_elements.dart';
+part './svg_point.dart';
 part './text_content_elements.dart';
+// utils
+part '../utils/svg_default_values.dart';
 
 abstract class SvgElement {
   final Map<SvgAttribute, dynamic> _attributes = {};
@@ -35,6 +36,10 @@ abstract class SvgElement {
     if (child is SvgElement || child is String) {
       _children.add(child);
     }
+  }
+
+  void _addChildren(Iterable<dynamic> children) {
+    _children.addAll(children.where((dynamic child) => child is SvgElement || child is String));
   }
 
   String get name;
@@ -50,6 +55,7 @@ abstract class SvgElement {
     }
   }
 
+  /// Returns string representation of svg element.
   void stringify(StringBuffer sBuffer) {
     sBuffer.write('<$name');
     final bool isAttributesNotEmpty = _attributes.entries.where((MapEntry<SvgAttribute, dynamic> attribute) => null != attribute.value).isNotEmpty;

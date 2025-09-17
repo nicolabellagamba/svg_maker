@@ -1,6 +1,6 @@
 part of './svg_element.dart';
 
-// TODO descriptive elements.
+// TODO descriptive elements 
 sealed class DescriptiveElement extends SvgElement {
 }
 

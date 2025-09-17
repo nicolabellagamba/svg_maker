@@ -1,5 +1,4 @@
-// dart imports
-import 'dart:ui';
+part of '../models/svg_element.dart';
 
 extension ColorExtension on Color {
   String toHex() {

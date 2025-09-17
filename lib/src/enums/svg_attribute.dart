@@ -1,3 +1,5 @@
+part of '../models/svg_element.dart';
+
 enum SvgAttribute {
   // accumulate,
   // additive,

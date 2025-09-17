@@ -7,7 +7,7 @@ mixin PointsAttributeMixin on SvgElement {
   }
 
   /// Add a point (pair of x,y absolute coordinate) to list.
-  addPoint(SvgPoint point) {
+  void addPoint(SvgPoint point) {
     _attributes[SvgAttribute.points] = switch (!_attributes.containsKey(SvgAttribute.points) || _attributes[SvgAttribute.points] == null) {
       true => "$point",
       false => "${_attributes[SvgAttribute.points]} $point",
@@ -15,7 +15,7 @@ mixin PointsAttributeMixin on SvgElement {
   }
 
   /// Adds a list/set of points (pairs of x,y absolute coordinates) to list. 
-  addPoints(Iterable<SvgPoint> points) {
+  void addPoints(Iterable<SvgPoint> points) {
     if (!_attributes.containsKey(SvgAttribute.points) || _attributes[SvgAttribute.points] == null) {
       _attributes[SvgAttribute.points] = "";
     }
